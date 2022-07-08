@@ -49,3 +49,23 @@ function mostraConsole() {
 }
 
 addEventListener('click', mostraConsole)
+
+function imc2(peso, altura) {
+    const imc = peso / (altura ** 2)
+    console.log(imc)
+}
+
+imc2(80, 1.80) // retorna imc
+console.log(imc2(80, 1.80)) // retorna o imc e undefined
+
+
+
+function terceiraIdade(idade) {
+    if(idade >= 60) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(terceiraIdade(60))
