@@ -4,7 +4,6 @@ function isTruthy(dado) {
 }
   
   // Crie uma função matemática que retorne o perímetro de um quadrado
-    
   // lembrando: perímetro é a soma dos quatro lados do quadrado
     function perimetroQuadrado(lado) {
             return lado * 4
@@ -13,7 +12,6 @@ function isTruthy(dado) {
   
   // Crie uma função que retorne o seu nome completo
   // ela deve possuir os parâmetros: nome e sobrenome
-
         function nomeCompleto(nome, sobrenome) {
             return `${nome} ${sobrenome}`
         }
