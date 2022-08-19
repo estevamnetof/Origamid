@@ -1,10 +1,11 @@
 var pessoa = {
     nome: 'Estevam',
+    sobrenome: 'Neto',
     idade: 22,
 
 }
 
-console.log(pessoa.idade)
+console.log(pessoa.idade, sobrenome, idade)
 
 var quadrado = {
     lados: 4,
