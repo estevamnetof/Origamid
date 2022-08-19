@@ -3,7 +3,7 @@
 var copasGanhas = [1959, 1962, 1970, 1994, 2002]
 
 // Interaja com a array utilizando um loop, para mostrar
-// no console a seguinte mensagem, `O Brasil ganhou a copa de ${ano`
+// no console a seguinte mensagem, `O Brasil ganhou a copa de ${ano}`
 for (var i = 0; i < copasGanhas.length; i++) {
     console.log(`O Brasil ganhou a copa de ${copasGanhas[i]}`);
 }
