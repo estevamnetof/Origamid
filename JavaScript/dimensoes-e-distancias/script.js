@@ -20,3 +20,10 @@ console.log(
     window.pageYOffset
 )
 
+const small = window.matchMedia('(max-width: 600px)').matches;
+
+if(small) {
+    console.log('Usuário mobile');
+} else {
+    console.log('Usuário desktop');
+}
