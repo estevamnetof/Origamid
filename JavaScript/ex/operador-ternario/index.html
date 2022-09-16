@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pode beber?</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            text-align: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-weight: 600;
+        }
+
+        div#res {
+            text-align: center;
+            font-size: 20px;
+            color: red;
+        }
+
+        p {
+            padding-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pode beber?</h1>
+    <div id="res"></div>
+    <p>Está é uma página de exemplo para utilização de Operador Ternário</p>
+
+    <script>
+        const idade = parseInt(prompt('Digite a sua idade: '));
+        const podeBeber = (idade >= 18) ? 'Pode Beber' : 'Não pode Beber'
+
+        const res = document.getElementById('res').innerHTML = podeBeber
+        
+    </script>
+</body>
+</html>
