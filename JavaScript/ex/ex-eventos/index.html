@@ -27,18 +27,46 @@
 
         .azul {
             background: teal;
+            color: white;
         }
 
         .yellow {
-            background: yellow;
+            background-color: yellow;
         }
 
+        #rotate-90-cw {
+	        -webkit-animation: rotate-90-cw 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: rotate-90-cw 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+        @-webkit-keyframes rotate-90-cw {
+        0% {
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+        }
+        100% {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+        }
+        @keyframes rotate-90-cw {
+        0% {
+            -webkit-transform: rotate(0);
+             transform: rotate(0);
+        }
+        100% {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+    }
+        
     </style>
 </head>
 <body>
     <h1>Clicou?</h1>
-    <div class="quadrado yellow"></div>
-    <p>Aperte a tecla 'a' para você ver uma coisa legal...</p>
+    <div class="quadrado" id="rotate-90-cw"></div>
+    <p>Aperte a tecla <strong>'a'</strong> para você ver uma coisa legal...</p>
+    <p>Aperte a tecla <strong>'y'</strong> para voltar ao normal.</p>
     <div class="res"></div>
 
     <script>
@@ -49,26 +77,24 @@
             res.innerHTML = 'Clicou! <br>'
         });
 
-        quadrado.addEventListener('mouseover', function() {
+        quadrado.addEventListener('mouseover', () => {
             res.innerHTML += 'Passou o mouse! <br>'
         });
 
         function handleKeyboard(event) {
             if(event.key === 'a') {
                 document.body.classList.toggle('azul');
+                document.querySelector('.quadrado').classList.add('yellow');
+            }
+            
+            if(event.key === 'y') {
+                document.body.classList.remove('azul')
+                document.querySelector('.quadrado').classList.remove('yellow');
             }
         }
 
         window.addEventListener('keydown', handleKeyboard);
 
-
-        function amareloCor(event) {
-            if(event.key === 'y') {
-                document.body.classList.add('yellow')
-            }
-        }
-
-        window.addEventListener('keydown', amareloCor);
     </script>
 </body>
 </html>

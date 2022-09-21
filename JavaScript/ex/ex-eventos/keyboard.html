@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bola</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        p {
+            font-style: italic;
+        }
+
+        .bola {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            border-radius: 50%;
+            margin: auto;
+        }
+
+        .sumiu {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desaparecer bola vermelha</h1>
+    <p>Aperte a tecla <strong>'a'</strong></p>
+    <p>Para voltar aperte novamente a tecla <strong>'a'</strong></p>
+    <div class="bola"></div>
+
+    <script>
+
+        function callback(event) {
+            if(event.key === 'a') {
+                document.querySelector('.bola').classList.toggle('sumiu')
+            }
+        }
+        
+        window.addEventListener('keydown', callback);
+    </script>
+</body>
+</html>
