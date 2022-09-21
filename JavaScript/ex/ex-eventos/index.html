@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .quadrado {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 0 auto;
+        }
+
+        .res {
+            padding: 20px;
+            font-size: 1.2em;
+        }
+
+        .azul {
+            background: teal;
+        }
+
+        .yellow {
+            background: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Clicou?</h1>
+    <div class="quadrado yellow"></div>
+    <p>Aperte a tecla 'a' para você ver uma coisa legal...</p>
+    <div class="res"></div>
+
+    <script>
+        const quadrado = document.querySelector('.quadrado');
+        const res = document.querySelector('.res');
+
+        quadrado.addEventListener('click', function(){
+            res.innerHTML = 'Clicou! <br>'
+        });
+
+        quadrado.addEventListener('mouseover', function() {
+            res.innerHTML += 'Passou o mouse! <br>'
+        });
+
+        function handleKeyboard(event) {
+            if(event.key === 'a') {
+                document.body.classList.toggle('azul');
+            }
+        }
+
+        window.addEventListener('keydown', handleKeyboard);
+
+
+        function amareloCor(event) {
+            if(event.key === 'y') {
+                document.body.classList.add('yellow')
+            }
+        }
+
+        window.addEventListener('keydown', amareloCor);
+    </script>
+</body>
+</html>
