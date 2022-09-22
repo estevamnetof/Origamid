@@ -14,7 +14,7 @@ img.addEventListener('click', callback);
 
 const animaisLista = document.querySelector('.animais-lista');
 
-function callbackLista() {
+function callbackLista(event) {
     console.log(event.currentTarget)
 }
 animaisLista.addEventListener('click', callbackLista);
