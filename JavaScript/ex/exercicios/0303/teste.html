@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de elementos</title>
+    <style>
+        .azul {
+            color: blue;
+            font-size: 1.125em;
+            text-indent: 30px;
+            line-height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seleção de elementos</h1>
+    <ul>
+        <li class="contato">Contato</li>
+        <li>Exemplo</li>
+        <li>Exemplo</li>
+        <li>Exemplo</li>
+        <li>Exemplo</li>
+    </ul>
+
+    <div class="grid-section">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatem eos reiciendis ad, quae quia totam officiis. Ea quo pariatur, odit adipisci earum odio sint eum, recusandae quisquam culpa vitae.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci cumque veritatis libero accusamus ut maiores possimus minima reprehenderit nostrum, voluptatibus nihil quibusdam architecto in officia, sequi voluptatum perspiciatis ad culpa?</p>
+    </div>
+
+    <div class="grid-section">
+        <h1>TESTANDOOOOOOOOOOOOOOOOO</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatem eos reiciendis ad, quae quia totam officiis. Ea quo pariatur, odit adipisci earum odio sint eum, recusandae quisquam culpa vitae.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci cumque veritatis libero accusamus ut maiores possimus minima reprehenderit nostrum, voluptatibus nihil quibusdam architecto in officia, sequi voluptatum perspiciatis ad culpa?</p>
+    </div>
+
+    <script>
+        const ul = document.getElementsByTagName('ul');
+        console.log(ul);
+
+        const contato = document.getElementsByClassName('grid-section contato');
+        console.log(contato);
+
+        const gridSection = document.querySelectorAll('.grid-section');
+
+        gridSection.forEach(function(gridItem) {
+            gridItem.classList.add('azul');
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que é o DOM</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            cursor: pointer;
+        }
+
+        .sumiu {
+            display: none;
+        }
+
+        .cor {
+            color: red;
+        }
+
+        .background {
+            background: teal;
+        }
+
+        .quadrado {
+            width: 300px;
+            height: 300px;
+            background-color: darkblue;
+            margin: 0 auto;
+        }
+
+        .color {
+            background: yellow;
+            border-radius: 50%;
+        }
+
+        .changeColor {
+            margin-top: 30px;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Object Model (DOM)</h1>
+    <div class="quadrado"></div>
+    <button class="changeColor" onclick="mudarCor()">Mudar cor</button>
+
+    <script>
+        // window.innerHeight; // Retorna a altura do browser
+
+        // document.querySelector('h1').addEventListener('click', () => {
+        //     document.body.classList.toggle('sumiu')
+        // })
+
+        function textColor() {
+            const titulo = document.querySelector('h1');
+        console.log(titulo.offsetHeight);
+        titulo.addEventListener('click', () => {
+            document.body.classList.add('cor');
+        });
+        }
+        textColor();
+
+        function backgroundColor() {
+            window.addEventListener('keydown', (event) => {
+                if (event.key === 'a') {
+                    document.body.classList.toggle('background')
+                }
+            });
+        }
+        backgroundColor();
+
+        function mudarCor() {
+            const quadrado = document.querySelector('.quadrado').classList.toggle('color')
+        }
+        
+    </script>
+</body>
+</html>
