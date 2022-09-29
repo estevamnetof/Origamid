@@ -78,3 +78,23 @@ linkInternos.forEach((link) => {
 
 // Selecione todos os elementos do site começando a partir do body,
 // ao clique mostre exatamente quais elementos estão sendo clicados
+// const todosElementos = document.querySelectorAll('body *')
+
+// function handleElemento(event) {
+//   event.currentTarget.remove();
+// }
+
+// todosElementos.forEach((elemento) => {
+//   elemento.addEventListener('click', handleElemento)
+// })
+
+// Se o usuário clicar na tecla (t), aumente todo o texto do site.
+
+function handleClick(event) {
+  console.log(event.key)
+  if(event.key === 't') {
+    document.documentElement.classList.toggle('textomaior');
+  }
+}
+
+window.addEventListener('click', handleClick);
