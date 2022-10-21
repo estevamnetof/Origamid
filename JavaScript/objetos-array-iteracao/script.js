@@ -85,3 +85,20 @@
 
 // console.log(maiorNumero)
 
+const frutas = ['Banana', 'Pêra', 'Uvas'];
+
+const temUva = frutas.some((item) => {
+    return item === 'Uva';
+})
+
+const every = frutas.some((item) => {
+    return item === 'Uva';
+})
+
+console.log(temUva);
+
+const numeros = [6, 43, 22, 88, 101, 29]/
+
+const maiorQue3 = numeros.every(n => n >= 6);
+
+console.log(maiorQue3)
