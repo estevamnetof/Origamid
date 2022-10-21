@@ -67,20 +67,21 @@
 
 
 
-const aulas = [10, 25, 30];
+// const aulas = [10, 25, 30];
 
 // const reduceAulas = aulas.reduce((acumulador, item, index, array) => {
 //     console.log(acumulador, item, index);
 //     return acumulador + item;
 // }, 0)
 
-const numeros = [10, 25, 30, 3, 54, 33, 22];
+// const numeros = [10, 25, 30, 3, 54, 33, 22];
 
-const maiorNumero = numeros.reduce((anterior, atual) => {
-    if(anterior > atual)
-        return anterior
-    else
-        return atual
-}, 0)
+// const maiorNumero = numeros.reduce((anterior, atual) => {
+//     if(anterior > atual)
+//         return anterior
+//     else
+//         return atual
+// }, 0)
 
-console.log(maiorNumero)
+// console.log(maiorNumero)
+
