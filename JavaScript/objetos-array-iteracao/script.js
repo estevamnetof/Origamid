@@ -1,35 +1,35 @@
 // const carros = ['Ford', 'Fiat', 'Honda'];
-
 // carros.forEach((item, index, array) => {
-//     console.log(item.toUpperCase(), index, array);
-// });
+//     console.log(item.toLocaleUpperCase());
+// }) 
 
 // console.log(carros);
 
 
+
 // const li = document.querySelectorAll('li');
 
-// const retornoForeach = li.forEach((item, index) => {
-//     item.classList.add('ativa' + index)
-// });
+// li.forEach(i => i.classList.add('ativa'));
 
-// console.log(retornoForeach)
+// li.forEach(function(item) {
+//     item.classList.add('ativa');
+// });
 
 
 // const carros = ['Ford', 'Fiat', 'Honda'];
-
-// const novaArray = carros.map((item, index, array) => {
-//     return item.toUpperCase();
+// carros.forEach((item, index, array) => {
+//     array[index] = 'Carro ' + item;
 // });
 
-// const numeros = [2, 4, 5, 6, 78];
-// const numerosx2 = numeros.map(n => n * 2)
 
-// console.log(numerosx2);
+// const carros = ['Ford', 'Fiat', 'Honda'];
+// const newCarros = carros.map((item) => {
+//     return 'Carro ' + item;
+// });
 
-// console.log(novaArray);
-// console.log(carros)
 
+// const numeros = [2, 4, 6, 8, 10, 12, 14];
+// const numerosX3 = numeros.map(n => n * 3);
 
 
 // const aulas = [
@@ -53,52 +53,112 @@
 
 // const tempoAulas = aulas.map(aula => aula.min);
 
-// const nomeAulas = aula => aula.nome;
+// const puxarNomes = aula => aula.nome;
+// const nomesAulas = aulas.map(puxarNomes);
 
-// const NomeAulas = aulas.map(function(aula) {
-//     return aula.nome;
-// })
-
-
-// const arrayNomeAulas = aulas.map(nomeAulas);
-
-// console.log(arrayNomeAulas);
-// console.log(tempoAulas);
-
+// console.log(tempoAulas)
 
 
 // const aulas = [10, 25, 30];
+// const total1 = aulas.reduce((acumulador, atual) => {
+//     return acumulador + atual;
+// })
 
-// const reduceAulas = aulas.reduce((acumulador, item, index, array) => {
-//     console.log(acumulador, item, index);
-//     return acumulador + item;
-// }, 0)
+// const total2 = aulas.reduce((acc, cur) => acc + cur, 100);
 
-// const numeros = [10, 25, 30, 3, 54, 33, 22];
+// console.log(total1);
+// console.log(total2);
 
-// const maiorNumero = numeros.reduce((anterior, atual) => {
-//     if(anterior > atual)
-//         return anterior
-//     else
-//         return atual
-// }, 0)
 
-// console.log(maiorNumero)
+// const numeros = [10, 25, 60, 5, 35, 10];
 
-const frutas = ['Banana', 'Pêra', 'Uvas'];
+// const maiorValor = numeros.reduce((anterior, atual) => {
+//     return anterior < atual ? atual : anterior;
+// });
 
-const temUva = frutas.some((item) => {
-    return item === 'Uva';
-})
+// console.log(maiorValor);
 
-const every = frutas.some((item) => {
-    return item === 'Uva';
-})
 
-console.log(temUva);
+// const frutas = ['Banana', 'Pêra', 'Uva'];
 
-const numeros = [6, 43, 22, 88, 101, 29]/
+// const frutasRight = frutas.reduceRight((acc, fruta) => acc + ' ' + fruta);
 
-const maiorQue3 = numeros.every(n => n >= 6);
+// console.log(frutasRight);
 
-console.log(maiorQue3)
+
+// const frutas = ['Banana', 'Pêra', 'Uva'];
+// const temUva = frutas.some((fruta) => {
+//     return fruta === 'Uva';
+// });
+
+// console.log(temUva);
+
+// function maiorQue100(numero) {
+//     return numero > 100;
+// }
+
+// const numeros = [0, 43, 22, 88, 101, 2];
+// const temMaior = numeros.some(maiorQue100);
+
+
+
+// const frutas = ['Banana', 'Pêra', 'Uva', ''];
+
+// const arraysCheias = frutas.every((fruta) => {
+//     return fruta;
+// });
+
+// const numeros = [6, 43, 22, 88, 101, 29];
+// const maiorQue3 = numeros.every(x => x > 3);
+
+
+
+// const frutas = ['Banana', 'Pêra', 'Uva', 'Maçã'];
+// const buscaUva = frutas.findIndex((fruta) => {
+//     return fruta === 'Uva';
+// });
+
+// const numeros = [6, 43, 22, 88, 101, 29];
+// const buscaMaior45 = numeros.find(x => x > 45);
+
+
+// const frutas = ['Banana', undefined, null, '', 'Uva', 0, 'Maçã'];
+// const arrayLimpa = frutas.filter((fruta) => {
+//     return fruta
+// });
+
+// console.log(frutas);
+// console.log(arrayLimpa);
+
+// const numeros = [6, 43, 22, 88, 101, 29];
+// const buscaMaior45 = numeros.filter(x => x > 45);
+
+// console.log(numeros);
+// console.log(buscaMaior45);
+
+
+
+// const aulas = [
+//     {
+//       nome: 'HTML 1',
+//       min: 15
+//     },
+//     {
+//       nome: 'HTML 2',
+//       min: 10
+//     },
+//     {
+//       nome: 'CSS 1',
+//       min: 20
+//     },
+//     {
+//       nome: 'JS 1',
+//       min: 25
+//     },
+//   ]
+  
+//   const maiores15 = aulas.filter((aula) => {
+//     return aula.min >= 15;
+//   })
+  
+//   console.log(maiores15)
