@@ -237,11 +237,87 @@ linksInternos.forEach((link) => {
 // });
 
 
-function handleClick(event) {
-    console.log(event.key)
-    if (event.key === 't') {
-        document.documentElement.classList.toggle('textoMaior');
-    }
+// function handleClick(event) {
+//     console.log(event.key)
+//     if (event.key === 't') {
+//         document.documentElement.classList.toggle('textoMaior');
+//     }
+// }
+
+// window.addEventListener('keydown', handleClick)
+
+// const tabMenu = document.querySelectorAll('js-tabmenu li');
+// const tabContent = document.querySelectorAll('js-tabmenu section');
+
+
+// function activeTab(index) {
+//     tabContent.forEach((content) => {
+//         content.classList.remove('ativo');
+//     });
+//     tabContent[index].classList.add('ativo');
+// }
+
+// tabMenu.forEach((itemMenu, index) => {
+//     itemMenu.addEventListener('click', () => {
+//         activeTab(index);
+//     });
+// });
+
+// if(tabContent.length && tabMenu.length) {
+//     tabContent[0].classList.add('ativo');
+// }
+
+
+// function Carro() {
+//     this.marca = 'Marca';
+//     this.preco = 0;
+// }
+
+// const honda = new Carro();
+// honda.marca = 'Honda';
+// honda.preco = 4000;
+
+// const fiat = new Carro();
+// fiat.marca = 'Fiat';
+// fiat.preco = 3000;
+
+
+// function Carro(marca, preco) {
+//     this.marca = marca;
+//     this.preco = preco;
+// }
+
+// const honda = new Carro('Honda', 4000);
+// const fiat = new Carro('Fiat', 3000);
+
+
+// const Dom = {
+//     seletor: 'li',
+//     element() {
+//         return document.querySelector(this.seletor);
+//     },
+//     ativo() {
+//         this.element().classList.add('ativo');
+//     },
+// }
+
+// Dom.ativo();
+// Dom.seletor = 'ul';
+// Dom.ativo();
+
+
+function Dom() {
+    this.seletor = 'li';
+    const element = document.querySelector(this.seletor);
+    this.ativo = function() {
+        element.classList.add('ativo');
+    };
 }
 
-window.addEventListener('keydown', handleClick)
+const lista = new Dom();
+lista.seletor = 'ul';
+lista.ativo();
+
+const lastLi = new Dom();
+lastLi.seletor = 'li:last-child';
+lastLi.ativo();
