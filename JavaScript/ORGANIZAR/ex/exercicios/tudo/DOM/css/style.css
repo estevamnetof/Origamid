@@ -3,6 +3,19 @@ body, h1, h2, ul, li, p, dd, dt, dl {
   padding: 0px;
 }
 
+.azul {
+  background-color: black;
+  color: white;
+}
+
+.vermelho {
+  background-color: red;
+}
+
+.textoMaior {
+  font-size: 150%;
+}
+
 img {
   display: block;
   max-width: 100%;
