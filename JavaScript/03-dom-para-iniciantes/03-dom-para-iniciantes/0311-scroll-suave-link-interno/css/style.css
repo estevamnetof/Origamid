@@ -1,3 +1,7 @@
+html.background {
+  background-color: #FFBB55;
+}
+
 body, h1, h2, ul, li, p, dd, dt, dl {
   margin: 0px;
   padding: 0px;
@@ -13,7 +17,7 @@ ul {
 }
 
 body {
-  background: #faf6ed;
+  /* background: #faf6ed;t */
   color: #222;
   -webkit-font-smoothing: antialiased;
   display: grid;
@@ -132,6 +136,7 @@ body {
   margin-top: 2rem;
   margin-bottom: .5rem;
   color: #E54;
+  cursor: pointer;
 }
 
 .faq-lista dt::before {

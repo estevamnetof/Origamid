@@ -24,14 +24,14 @@ initTabNav();
 function initAccordion() {
   const accordionList = document.querySelectorAll('.js-accordion dt');
   const activeClass = 'ativo';
-  
+
   if(accordionList.length) {
-    accordionList[0].classList.add(activeClass);
-    accordionList[0].nextElementSibling.classList.add(activeClass);
+    accordionList[0].classList.add('ativo');
+    accordionList[0].nextElementSibling.classList.add('ativo');
 
     function activeAccordion() {
-      this.classList.toggle(activeClass);
-      this.nextElementSibling.classList.toggle(activeClass);
+    this.classList.toggle(activeClass);
+    this.nextElementSibling.classList.toggle(activeClass);
     }
 
     accordionList.forEach((item) => {
@@ -40,3 +40,14 @@ function initAccordion() {
   }
 }
 initAccordion();
+
+function fonteMaior() {
+  function handleClickT(event) {
+  if(event.key === 't') {
+    document.documentElement.classList.toggle('textomaior');
+  }
+  }
+
+  window.addEventListener('keydown', handleClickT);
+}
+fonteMaior();

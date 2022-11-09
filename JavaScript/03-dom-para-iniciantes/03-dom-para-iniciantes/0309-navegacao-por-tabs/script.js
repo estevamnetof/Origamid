@@ -5,10 +5,10 @@ if(tabMenu.length && tabContent.length) {
   tabContent[0].classList.add('ativo');
 
   function activeTab(index) {
-    tabContent.forEach((section) => {
-      section.classList.remove('ativo');
-    });
-    tabContent[index].classList.add('ativo');
+  tabContent.forEach((section) => {
+    section.classList.remove('ativo');
+  });
+  tabContent[index].classList.add('ativo');
   }
 
   tabMenu.forEach((itemMenu, index) => {
@@ -17,3 +17,15 @@ if(tabMenu.length && tabContent.length) {
     });
   });
 }
+
+// const todosElementos = document.querySelectorAll('body *');
+
+// function remover(event) {
+//   event.currentTarget.remove('')
+// }
+
+// todosElementos.forEach((elementos) => {
+//   elementos.addEventListener('click', remover);
+// })
+
+// console.log(todosElementos)
