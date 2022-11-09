@@ -23,32 +23,48 @@
 // })
 
 
-var numeros = [1, 2, 3, 4, 5]; //vetor original
+// var numeros = [1, 2, 3, 4, 5]; //vetor original
 
-var quadrados = numeros.map((item) => {
-    return Math.pow(item, 2); //retorna o item original elevado ao quadrado
-});
+// var quadrados = numeros.map((item) => {
+//     return Math.pow(item, 2); //retorna o item original elevado ao quadrado
+// });
 
-document.write(quadrados);
+// document.write(quadrados);
 
 
-var vencedores = [
-    {
-        nome: 'Equipe Super',
-        país: 'Brasil'
-    },
-    {
-        nome: 'Time Maximo',
-        país: 'EUA'
-    },
-    {
-        nome: 'Mega Grupo',
-        país: 'Canadá'
-    }
-];
+// var vencedores = [
+//     {
+//         nome: 'Equipe Super',
+//         país: 'Brasil'
+//     },
+//     {
+//         nome: 'Time Maximo',
+//         país: 'EUA'
+//     },
+//     {
+//         nome: 'Mega Grupo',
+//         país: 'Canadá'
+//     }
+// ];
 
-var podioPorPais = vencedores.map((item, indice) => {
-    return item.país;
-});
+// var podioPorPais = vencedores.map((item, indice) => {
+//     return item.país;
+// });
 
-document.write(podioPorPais);
+// document.write(podioPorPais);
+
+
+// =======================================================
+// REDUCE
+// =======================================================
+
+const rockets = [
+    { country: 'Russia', launches: 32},
+    { country: 'US', launches: 23},
+    { country: 'China', launches: 16},
+    { country: 'Europe', launches: 7},
+    { country: 'India', launches: 4},
+    { country: 'Japan', launches: 3}
+]
+
+const totalLaunches = rockets.reduce((prevVal, elem) => prevVal + elem.launches, 0);

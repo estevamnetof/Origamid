@@ -20,13 +20,13 @@ linksInternos.forEach((link) => {
 // ao clique mostre exatamente quais elementos estão sendo clicados
 const todosElementos = document.querySelectorAll('body *');
 
-function handleElemento(event) {
-  event.currentTarget.remove();
-}
+// function mostrarElemento(event) {
+//   event.currentTarget.remove()
+// }
 
 // todosElementos.forEach((elemento) => {
-//   elemento.addEventListener('click', handleElemento);
-// })
+//   elemento.addEventListener('click', mostrarElemento)
+// });
 
 // Utilizando o código anterior, ao invés de mostrar no console,
 // remova o elemento que está sendo clicado, o método remove() remove um elemento
@@ -35,9 +35,9 @@ function handleElemento(event) {
 // Se o usuário clicar na tecla (t), aumente todo o texto do site. 
 
 function handleClickT(event) {
-  console.log(event.key);
+  console.log(event.key)
   if(event.key === 't') {
-    document.documentElement.classList.toggle('textomaior');
+    document.documentElement.classList.toggle('textomaior'); // o documentElement é o html
   }
 }
 
