@@ -7,23 +7,23 @@ function Pessoa(nome, sobrenome, idade) {
   this.nome = nome;
   this.sobrenome = sobrenome;
   this.idade = idade;
-} 
-
-Pessoa.prototype.nomeCompleto = function() {
-  return `${this.nome} ${this.sobrenome}`
 }
 
-const andre = new Pessoa('André', 'Rafael', 28);
+Pessoa.prototype.nomeCompleto = function() {
+  return `${this.nome} + ${this.sobrenome}`
+}
 
-// Liste os métodos acessados por 
+const estevam = new Pessoa('Estevam', 'Neto', 22);
+
+// Liste os métodos acessados por
 // dados criados com NodeList,
 // HTMLCollection, Document
-Object.getOwnPropertyNames(NodeList.prototype)
-Object.getOwnPropertyNames(HTMLCollection.prototype)
-Object.getOwnPropertyNames(Document.prototype)
+console.log(Object.getOwnPropertyNames(NodeList.prototype));
+console.log(Object.getOwnPropertyNames(HTMLCollection.prototype));
+console.log(Object.getOwnPropertyNames(Document.prototype)); 
 
-
-// Liste os construtores dos dados abaixo
+// Liste os construtores
+// ex: li.constructor.name
 const li = document.querySelector('li');
 
 li; // HTMLLIElement
@@ -35,4 +35,4 @@ li.offsetLeft; // Number
 li.click(); // undefined
 
 // Qual o construtor do dado abaixo:
-li.hidden.constructor.name; // String
+// li.hidden.construtor.name; // String

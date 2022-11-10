@@ -11,15 +11,15 @@ function Pessoa(nome, idade) {
   this.nome = nome;
   this.idade = idade;
   this.andar = function() {
-    console.log(nome + ' Andou');
+    console.log(this.nome + ' andou');
   }
 }
 
 // Crie 3 pessoas, João - 20 anos,
 // Maria - 25 anos, Bruno - 15 anos
-const joao = new Pessoa('João', 20);
-const maria = new Pessoa('Maria', 25);
-const bruno = new Pessoa('Bruno', 15);
+const joao = new Pessoa('João', 28);
+const renato = new Pessoa('Renato', 21);
+const bruna = new Pessoa('Bruna', 16);
 
 
 // Crie uma Constructor Function (Dom) para manipulação
@@ -37,11 +37,11 @@ function Dom(seletor) {
     elementList.forEach((element) => {
       element.classList.add(classe);
     })
-  }
-  this.removeClass = function(classe) {
-    elementList.forEach((element) => {
-      element.classList.remove(classe);
-    })
+    this.removeClass = function(classe) {
+      elementList.forEach((element) => {
+        element.classList.remove(classe);
+      })
+    }
   }
 }
 
