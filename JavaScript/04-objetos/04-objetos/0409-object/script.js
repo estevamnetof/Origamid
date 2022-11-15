@@ -1,7 +1,7 @@
 // Crie uma função que verifique
 // corretamente o tipo de dado
 function verificarDado(dado) {
-    return Object.prototype.toString.call(dado);
+    return Object.prototype.toString.call(dado)
 }
 
 console.log(verificarDado([]));
