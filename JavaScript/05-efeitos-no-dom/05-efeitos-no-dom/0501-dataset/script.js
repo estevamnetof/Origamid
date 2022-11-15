@@ -1,6 +1,7 @@
 // Adicione um atributo data-anime="show-down" e
 // data-anime="show-right" a todos as section's
 // com descricão dos animais.
+const sections = document.querySelectorAll('')
 
 // Utilizando estes atributos, adicione a classe
 // show-down ou show-right a sua respectiva section
@@ -11,3 +12,14 @@
 // para a direita
 
 // Substitua todas as classes js- por data atributes.
+
+
+// const div = document.querySelector('[data-cor]');
+
+// div.dataset.height = 1000;
+
+// delete div.dataset.width;
+
+// div.dataset.totalHeight = 2000;
+
+// console.log(div.dataset);
