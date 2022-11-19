@@ -4,3 +4,4 @@ o que tem que ser adicionado ao projeto modelo:
 - dropdown menu // FEITO
 - clickoutside // DEPOIS (importar dentro do dropdown menu)
 - menu mobile
+- anima numeros
