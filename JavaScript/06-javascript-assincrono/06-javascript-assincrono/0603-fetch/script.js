@@ -14,7 +14,7 @@ function handleClick(event) {
 }
 
 function buscaCep(cep) {
-  fetch(`https://viacep.com.br/ws/${cep}/json/`)
+  fetch(`https://viacep.com.br/ws/${cep}/json`)
   .then(response => response.text())
   .then(body => {
     resultadoCep.innerText = body;
@@ -23,26 +23,27 @@ function buscaCep(cep) {
 
 
 // Utilizando a API https://blockchain.info/ticker
-// retorne no DOM o valor de compra da bitcoin and reais.
+// retorne no DOM o valor de compra de bitcoin and reais.
 // atualize este valor a cada 30s
+// const btcDisplay = document.querySelector('.btc');
 
-const btcDisplay = document.querySelector('.btc');
-
-function fetchBtc() {
-  fetch('https://blockchain.info/ticker')
-  .then(response => response.json())
-  .then(btcJson => {
-    btcDisplay.innerText = ('R$ ' + btcJson.BRL.buy).replace('.', ',');
-  })
-}
+// function fetchBtc() {
+//   fetch('https://blockchain.info/ticker')
+//   .then(response => response.json())
+//   .then(btcJson => {
+//     console.log(btcJson.BRL.buy);
+//     btcDisplay.innerText = ('R$ ' + btcJson.BRL.buy).replace('.', ',');
+//   })
+// }
 
 // setInterval(fetchBtc, 1000 * 30);
 
-fetchBtc();
+// fetchBtc();
 
 // Utilizando a API https://api.chucknorris.io/jokes/random
-// retorne uma piada randomica do chucknorris, toda vez que
+// retorne uma piada randomica do chucknorris, toda vez qe
 // clicar em próxima
+
 const btnProxima = document.querySelector('.proxima');
 const paragrafoPiada = document.querySelector('.piada');
 
@@ -57,13 +58,3 @@ function puxarPiada() {
 btnProxima.addEventListener('click', puxarPiada);
 
 puxarPiada();
-
-function puxarPost() {
-  fetch('https://jsonplaceholder.typicode.com/posts/')
-  .then(r => r.json())
-  .then(r => {
-    console.log(r)
-  })
-}
-
-puxarPost();
