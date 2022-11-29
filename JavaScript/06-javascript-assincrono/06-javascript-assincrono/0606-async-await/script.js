@@ -49,29 +49,64 @@
 
 
 
+// async function puxarDados() {
+//   const responseDados = fetch('./dados.json');
+//   const responseClientes = fetch('./clientes.json');
+
+//   const jsonDados = await (await responseDados).json();
+//   const jsonClientes = await (await responseClientes).json();
+
+//   console.log(jsonDados)
+//   console.log(jsonClientes)
+// }
+
+// puxarDados();
+
+
+// async function asyncSemPromise() {
+//   // Console não irá esperar.
+//   await new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('Depois de 1s')
+//       resolve()
+//     }, 1000);
+//   })
+//   console.log('acabou')
+// }
+
+// asyncSemPromise();
+
+
+// function iniciarFetch() {
+//   fetch('./dados.json')
+//   .then(r => r.json())
+//   .then(dadosJSON => {
+//     document.body.innerText = dadosJSON.aula;
+//   });
+// }
+
+// iniciarFetch();
+
 async function puxarDados() {
-  const responseDados = fetch('./dados.json');
-  const responseClientes = fetch('./clientes.json');
+    const dadosResponse = fetch('./dados.json');
+    const clientesResponse = fetch('./clientes.json');
 
-  const jsonDados = await (await responseDados).json();
-  const jsonClientes = await (await responseClientes).json();
+    const dadosJSON = await (await dadosResponse).json();
+    const clientesJSON = await (await clientesResponse).json();
 
-  console.log(jsonDados)
-  console.log(jsonClientes)
+    document.body.innerText = dadosJSON.aula;
+    document.body.innerHTML += `<br>`
+    document.body.innerText += clientesJSON.nome
 }
 
 puxarDados();
 
 
-async function asyncSemPromise() {
-  // Console não irá esperar.
+async function iniciarAsync() {
   await new Promise(resolve => {
-    setTimeout(() => {
-      console.log('Depois de 1s')
-      resolve()
-    }, 1000);
-  })
-  console.log('acabou')
+    setTimeout(() => resolve(), 1000);
+  });
+  console.log('Depois de 1s');
 }
 
-asyncSemPromise();
+iniciarAsync()
