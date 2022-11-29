@@ -40,8 +40,76 @@
 // })
 // .then(json => console.log(json));
 
-const url = 'https://www.google.com';
+// const url = 'https://www.google.com';
 
-fetch(url)
-.then(response => response.text())
-.then(text => console.log(text));
+// fetch(url)
+// .then(response => response.text())
+// .then(text => console.log(text));
+
+// fetch('https://pokeapi.co/api/v2/pokemon/')
+// .then(r => r.json())
+// .then(pokemon => {
+//     console.log(pokemon);
+// });
+
+
+// const url = 'https://jsonplaceholder.typicode.com/posts/';
+// const options = {
+//     method: 'POST',
+//     headers: {
+//         "Content-Type": "application/json; charset=utf-8",
+//     },
+//     body: '"aula": "JavaScript"'
+// }
+
+// fetch(url, options)
+// .then(response => response.json())
+// .then(json => {
+//     console.log(json);
+// });
+
+
+
+// const url = 'https://jsonplaceholder.typicode.com/posts/';
+// fetch(url, {
+//     method: 'GET'
+// })
+// .then(r => r.json())
+// .then(r => console.log(r))
+
+
+// const url = 'https://jsonplaceholder.typicode.com/posts/';
+
+// fetch(url, {
+//     method: 'POST',
+//     headers: {
+//         "Content-Type": "application/json; charset=utf=8",
+//     },
+//     body: '{"Titulo": "JavaScript"}'
+// })
+// .then(r => r.json())
+// .then(r => console.log(r))
+
+
+// const url = 'https://jsonplaceholder.typicode.com/posts/';
+
+// fetch(url, {
+//     method: 'PUT',
+//     headers: {
+//         "Content-Type": "application/json; charset=utf=8",
+//     },
+//     body: '{"Titulo": "JavaScript"}'
+// })
+// .then(r => r.json())
+// .then(r => console.log(r))
+
+
+const url = 'https://jsonplaceholder.typicode.com/posts/'
+
+fetch(url , {
+    method: 'HEAD',
+})
+.then(response => {
+    response.headers.forEach(console.log);
+    console.log(response.headers.get('Content-Type'));
+});
