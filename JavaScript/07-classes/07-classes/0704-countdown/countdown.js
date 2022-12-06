@@ -14,6 +14,7 @@ export default class Countdown {
   get days() {
     return Math.floor(this._timeStampDiff / (24 * 60 * 60 * 1000));
   }
+
   get hours() {
     return Math.floor(this._timeStampDiff / (60 * 60 * 1000));
   }
@@ -32,7 +33,7 @@ export default class Countdown {
       days,
       hours,
       minutes,
-      seconds,
+      seconds
     }
   }
 }
