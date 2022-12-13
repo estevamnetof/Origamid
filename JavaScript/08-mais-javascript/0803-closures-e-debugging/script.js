@@ -12,3 +12,4 @@ ativarIncremento();
 ativarIncremento();
 ativarIncremento();
 ativarIncremento();
+ativarIncremento();
