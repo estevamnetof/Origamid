@@ -1,6 +1,6 @@
 export default class ValidarCpf {
   constructor(element) {
-    this.element = element;
+    this.element =  element;
   }
   limpar(cpf) {
     return cpf.replace(/\D/g, '');
@@ -14,7 +14,7 @@ export default class ValidarCpf {
   }
   validar(cpf) {
     const matchCpf = cpf.match(/(?:\d{3}[-.\s]?){3}\d{2}/g);
-    return (matchCpf && matchCpf[0] === cpf);
+    return (matchCpf && matchCpf[0] === cpf)
   }
   validarNaMudanca(cpfElement) {
     if(this.validar(cpfElement.value)) {
@@ -22,12 +22,14 @@ export default class ValidarCpf {
       cpfElement.classList.add('valido');
       cpfElement.classList.remove('erro');
       cpfElement.nextElementSibling.classList.remove('ativar');
+
     } else {
-      cpfElement.classList.add('erro');
+      cpfElement.classList.add("erro");
       cpfElement.classList.remove('valido');
       cpfElement.nextElementSibling.classList.add('ativar');
     }
   }
+
   adicionarEvento() {
     this.element.addEventListener('change', () => {
       this.validarNaMudanca(this.element);
