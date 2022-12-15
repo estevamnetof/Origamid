@@ -17,20 +17,20 @@
 
         const Compras = () => {
             const [contador, setContador] = React.useState(0);
-            console.log(contador);
+            console.log(contador)
             function comprar() {
-                setContador(contador + 1);
+                setContador(contador + 1)
             }
-
             return (
-                    <div>
-                        <button onClick={comprar}>Comprar</button>
-                        <p>Total: {contador}</p>
-                        <p>Preço: R$ {contador * 250}</p>
-                    </div>
-                )
+                <div>
+                    <button onClick={comprar}>Comprar</button>    
+                    <p>Total: {contador}</p>
+                    <p>Preço: R$ {contador * 250}</p>
+                </div>
+            )
+
         }
-        
+
         const Button = () => {
             function handleClick(event) {
                 console.log(event.target.innerText);
@@ -41,12 +41,12 @@
 
         const Titulo = () => {
             const numero = Math.random() * 1000;
-            return <h1>Meu Título {numero}</h1>
+            return <h1>Meu titulo {numero}</h1>
         }
-        
+
         const App = () => {
             return <div>Meu App
-                <Compras />
+                <Compras/>
                 <Titulo />
                     <Button />
                     <div>
@@ -56,7 +56,9 @@
                 </div>
         }
 
+
         ReactDOM.render(<App />, document.getElementById('app'))
     </script>
+    
 </body>
 </html>
