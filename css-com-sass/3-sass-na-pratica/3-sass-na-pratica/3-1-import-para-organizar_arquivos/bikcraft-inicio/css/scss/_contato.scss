@@ -11,6 +11,10 @@
 
 .contato_form {
 	padding-right: 60px;
+	@include d(m) {
+		padding-right: 0px;
+		margin-bottom: 40px;
+	}
 }
 
 .contato_form label{
@@ -22,7 +26,7 @@
 .contato_form input {
 	display: block;
 	width: 100%;
-	border: 4px solid #fec63e;
+	border: 4px solid $amarelo;
 	background: none;
 	padding: 7px 10px;
 	margin-bottom: 10px;
@@ -34,7 +38,7 @@
 	display: block;
 	width: 100%;
 	height: 120px;
-	border: 4px solid #fec63e;
+	border: 4px solid $amarelo;
 	background: none;
 	padding: 7px 10px;
 	margin-bottom: 20px;
@@ -52,10 +56,10 @@
 }
 
 .contato_dados h3{
-	font-size: 18px;
+	@include tipo-1(18);
 	line-height: 25px;
 	text-transform: uppercase;
-	color: #fec63e;
+	color: $amarelo;
 	font-weight: bold;
 }
 
@@ -79,7 +83,7 @@
 }
 
 .contato_dados ul li a {
-	border: 3px solid #fec63e;
+	border: 3px solid $amarelo;
 	display: block;
 	padding: 10px;
 }
