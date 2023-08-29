@@ -1,70 +1,62 @@
-// exemplo 1
-function retorno<Tipo>(a: Tipo): Tipo {
-    return a;
+function somar(a: number, b: number, c?:number): number {
+    return a + b + (c ? c : 0);
 }
 
-console.log(retorno('A Game').charAt(0));
-console.log(retorno(200).toFixed());
+console.log(somar(3, 8));
+console.log(somar(3, 2, 82));
 
-// exemplo 2
-function firstFive<Tipo>(lista: Tipo[]): Tipo[] {
-    return lista.slice(0, 5);
+const subtrair = (a: number, b: number): number => a - b;
+
+console.log(subtrair(23, 2));
+
+type Callback = (event: MouseEvent) => void;
+
+// Void
+function pintarTela(cor: string) {
+    document.body.style.background = cor;
 }
 
-const numeros = [1, 3, 4, 5, 3, 20, 3, 4, 5];
-const frutas = ['Banana', 'Pêra', 'Uva', 'Laranja', 'Limão'];
+pintarTela('black');
 
-const five1 = firstFive(numeros);
-const five2 = firstFive(frutas);
-
-console.log(five1);
-console.log(five2);
-
-// exemplo 3
-function notNull<T>(arg: T) {
-    if (arg !== null) return arg;
-    else return null;
-}
-
-console.log(notNull(200)?.toFixed());
-
-// Extends
-// exemplo 1   
-function extractText<T extends HTMLElement>(el: T): string {
-    return el.innerText;
-}
-
-// const link = document.querySelector('a');
-
-// if (link) {
-//     console.log(extractText(link));
+// Never
+// function abortar(mensagem: string): never {
+//     throw new Error(mensagem);
 // }
 
-// exemplo 2
-function $<T extends Element>(selector: string): T | null {
-    return document.querySelector(selector);
-}
-
-// const link = $<HTMLAnchorElement>('a')?.href;
-// console.log(link);
+// abortar('Um erro ocorreu');
+// console.log('Tente novamente');
 
 // Métodos
-const link = document.querySelector<HTMLAnchorElement>('.link');
-link?.href;
-
-async function getData<T>(url: string): Promise<T> {
-    const response = await fetch(url);
-    return await response.json();
+interface Quadrado {
+    lado: number;
+    perimetro(lado: number): number;
 }
 
-interface Notebook {
-    nome: string;
-    preco: number;
+function calcular(forma: Quadrado) {}
+
+// Overload
+function normalizar(valor: string): string;
+function normalizar(valor: string[]): string[];
+function normalizar(valor: string | string[]): string | string[] {
+    if (typeof valor === 'string') {
+        return valor.trim().toLowerCase();
+    } else {
+        return valor.map((item) => item.trim().toLocaleLowerCase());
+    }
 }
 
-async function handleData() {
-    const notebook = await getData<Notebook>('https://api.origamid.dev/json/notebook.json');
-    console.log(notebook.nome);
+console.log(normalizar('PROdutO   '));
+console.log(normalizar(['BaNana ', ' UvA']));
+
+// exemplo 2
+function $(seletor: 'video'): HTMLVideoElement | null;
+function $(seletor: 'div'): HTMLDivElement | null;
+function $(seletor: 'a'): HTMLAnchorElement | null;
+function $(seletor: string): Element | null;
+function $(seletor: string): Element | null {
+    return document.querySelector(seletor);
 }
 
-handleData();
+$('a')?.href;
+$('video')?.volume;
+$('.teste')?.innerHTML;
