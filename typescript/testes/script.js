@@ -1,50 +1,32 @@
 "use strict";
-// // function toNumber(value: number | string) {
-// //     if (typeof value === 'number') {
-// //         return value;
-// //     } else if (typeof value === 'string') {
-// //         return Number(value);
-// //     } else {
-// //         throw 'Value deve ser um número ou uma string';
-// //     }
-// // }
-// interface Produto {
-//     nome: string;
-//     preco: number;
-//     teclado: boolean;
-// }
-// function preencherDados(dados: Produto) {
-//     document.body.innerHTML += `
-//         <div>
-//             <h2>${dados.nome}</h2>
-//             <p>${dados.preco}</p>
-//             <p>Inclui teclado: ${dados.teclado ? 'Sim' : 'Não'}</p>
-//         </div>
-//     `;
-// }
-// preencherDados({
-//     nome: 'Computador',
-//     preco: 2000,
-//     teclado: false
-// });
-// preencherDados({
-//     nome: 'Notebook',
-//     preco: 1500,
-//     teclado: true
-// });
-async function fetchProduct() {
-    const response = await fetch('https://api.origamid.dev/json/notebook.json');
+const numeros = [10, 30, 40, 5, 3, 30];
+const valores = [10, 'Taxas', 40, 'Produto', 3, 30];
+function maiorQue10(data) {
+    return data.filter((n) => n > 10);
+}
+console.log(maiorQue10(numeros));
+async function fetchCursos() {
+    const response = await fetch('https://api.origamid.dev/json/cursos.json');
     const data = await response.json();
-    showProduct(data);
+    mostrarCursos(data);
     console.log(data);
 }
-fetchProduct();
-function showProduct(data) {
-    document.body.innerHTML = `
-      <div>
-        <h2>${data.nome}</h2>
-        <p>R$ ${data.preco}</p>
-        <p>${data.descricao}</p>
-      </div>
-    `;
+fetchCursos();
+function mostrarCursos(cursos) {
+    cursos.forEach((curso) => {
+        let color;
+        if (curso.nivel === 'iniciante') {
+            color = 'blue';
+        }
+        else if (curso.nivel === 'avancado') {
+            color = 'red';
+        }
+        document.body.innerHTML += `
+            <div>
+                <h2 style="color: ${color};">${curso.nome}</h2>
+                <p>${curso.horas} Horas</p>
+                <p>${curso.nivel}</p>
+            </div>
+        `;
+    });
 }
